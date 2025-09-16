@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mark Attendance - Attendance System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a class="nav-link active" href="index.html">Home</a></li>
+      <li><a class="nav-link active" href="student.html">Students</a></li>
+      <li><a class="nav-link active" href="attendance.html">Attendance</a></li>
+      <li><a class="nav-link active" href="report.html">Reports</a></li>
+      <li><a class="nav-link active" href="dashboard.html">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h2>📋 Mark Attendance</h2>
+
+    <!-- Attendance Form -->
+    <form class="student-form">
+      <input type="date" required />
+      <select required>
+        <option value="">Select Class</option>
+        <option value="TYBSc">TYBSc</option>
+        <option value="SYBSc">SYBSc</option>
+      </select>
+      <button type="submit">Load Students</button>
+    </form>
+
+    <!-- Attendance Table -->
+    <h3>✅ Attendance Sheet</h3>
+    <form>
+      <table>
+        <tr>
+          <th>Roll No</th>
+          <th>Name</th>
+          <th>Present</th>
+        </tr>
+        <tr>
+          <td>101</td>
+          <td>Vaishnavi Deshmane</td>
