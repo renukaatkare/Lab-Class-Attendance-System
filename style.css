@@ -1,14 +1,24 @@
-/* Base Styling */
+/* =======================
+   RESET + BASE
+======================= */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: url('bg.jpg') no-repeat center center fixed;
   background-size: cover;
   color: white;
-  padding-top: 60px; /* Navbar height space */
+  padding-top: 60px; /* Navbar height */
 }
 
-/* --- Navbar --- */
+/* =======================
+   NAVBAR
+======================= */
 .navbar {
   position: fixed;
   top: 0;
@@ -18,24 +28,16 @@ body {
   justify-content: center;
   z-index: 1000;
   padding: 15px 0;
-  text-align: center;
 }
-
 .navbar ul {
   list-style: none;
   display: flex;
   margin: 0;
-  padding: 0px;
-  background-color: transparent;
-  align-items: center;
+  padding: 0;
 }
-
 .navbar li {
   margin: 0 25px;
-  display: inline-block;
-  position: relative;
 }
-
 .navbar a {
   background-color: #0A2647;
   color: #fff;
@@ -45,70 +47,145 @@ body {
   font-weight: 500;
   font-size: 18px;
   transition: 0.3s;
-  box-shadow: inset 0 0 10px rgba(255, 255, 255,0.2);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
 }
-
 .navbar a:hover {
   background-color: #5ec4c4;
   color: #ffcc00;
   font-size: 19px;
 }
 
-/* --- Login Page --- */
-.login-bg {
-  display: flex;
-  justify-content: center;    
-  align-items: center;        
-  height: calc(100vh - 60px); 
-  background-color: rgba(10, 38, 71, 0.8);
-}
-
-.login-bg {
-  background: url("images/log.jpg") no-repeat center center fixed;
-  background-size: cover;
-  min-height: 80vh; 
-  font-family: 'Poppins', sans-serif;
-}
-
-.login-box {
-  background-color: #2C74B3;
-  padding: 50px;
-  border-radius: 16px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
-  width: 350px;
+/* =======================
+   LOGIN PAGE
+======================= */
+.header {
+  background: #0a2e63;
+  color: white;
+  padding: 15px;
   text-align: center;
+  font-size: 22px;
+  font-weight: bold;
 }
-
-.login-box h2 {
-  margin-bottom: 25px;
-  font-size: 32px;
+.college-name {
+  text-align: center;
+  font-size: 20px;
+  margin: 15px 0;
+  font-weight: bold;
+  color: #0a2e63;
 }
-
-.login-box input {
+.container.login {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 40px 70px; /* तुमच्या फाइलमधलं */
+}
+.left img {
+  width: 550px;
+  height: auto;
+  border-radius: 5px;
+}
+.right {
+  margin-left: 10px;
+  padding: 60px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.right h2 {
+  margin-bottom: 15px;
+  color: #0a2e63;
+}
+.right input {
   width: 90%;
-  padding: 12px;
-  margin: 12px 0;
-  border: none;
-  border-radius: 6px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
-
-.login-box button {
-  width: 100%;
-  padding: 12px;
-  background-color: #0A2647;
+.right button {
+  background: #0a2e63;
   color: white;
   border: none;
-  border-radius: 6px;
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 5px;
   cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
+  font-size: 16px;
+}
+.right button:hover {
+  background: #062046;
+}
+.links {
+  margin-top: 10px;
+  font-size: 14px;
+}
+.links a {
+  color: #0a2e63;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.login-box button:hover {
-  background-color: #1e5d96;
+/* =======================
+   MODAL POPUP
+======================= */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000; /* तुमच्या फाइलमधलं */
+  left: 0; 
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+.modal-content {
+  background-color: #fff;
+  margin: 8% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  position: relative; /* तुमच्या फाइलमधलं */
+}
+.close {
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute; 
+  right: 15px; 
+  top: 10px; 
+}
+.modal h2 {
+  color: #0a2e63;
+  margin-bottom: 15px;
+}
+.modal input,
+.modal button {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+.modal input {
+  border: 1px solid #ccc;
+}
+.modal button {
+  background: #0a2e63;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.modal button:hover {
+  background: #062046;
 }
 
-/* --- Common Container for Pages --- */
+/* =======================
+   COMMON CONTAINER
+======================= */
 .container {
   background: rgba(10, 38, 71, 0.8);
   padding: 40px;
@@ -119,10 +196,8 @@ body {
   color: white;
   text-align: center;
 }
-
-/* --- Headings --- */
-.container h1, 
-.container h2, 
+.container h1,
+.container h2,
 .container h3 {
   font-size: 28px;
   color: #ffcc00;
@@ -130,97 +205,52 @@ body {
   text-align: center;
 }
 
-/* --- Tables --- */
+/* =======================
+   TABLE STYLING (तुझं)
+======================= */
+.table-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
 table {
-  width: 100%;
+  width: 90%;
   border-collapse: collapse;
-  margin-top: 20px;
-  background: rgba(255, 255, 255, 0.1);
+  background: #34495e;
+  color: white;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
-
-table th, table td {
-  padding: 15px;
+th, td {
+  padding: 12px;
   text-align: center;
   font-size: 16px;
 }
-
-table th {
-  background: #0A2647;
+th {
+  background: #001f4d;
   color: #ffcc00;
-  font-size: 18px;
-  letter-spacing: 1px;
 }
-
-table tr:nth-child(even) {
-  background: rgba(255,255,255,0.05);
+tr:nth-child(even) { background: #2f4a80; }
+tr:nth-child(odd)  { background: #3b5ca7; }
+tr:hover td {
+  background: #4a6fc2;
+  transition: 0.3s;
 }
-
-table tr:hover {
-  background: rgba(255,255,255,0.2);
-  cursor: pointer;
-}
-
-/* --- Buttons --- */
 button {
-  background-color: #0A2647;
-  color: #fff;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
+  display: block;
+  margin: 20px auto 0;
 }
 
-button:hover {
-  background-color: #1e5d96;
-  transform: scale(1.05);
-}
-
-/* Form neat layout */
-.student-form {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 25px;
-  flex-wrap: wrap;
-}
-
-.student-form input {
-  padding: 12px;
-  border-radius: 6px;
-  border: none;
-  font-size: 16px;
-}
-
-.student-form button {
-  background: #0A2647;
-  color: #fff;
-  padding: 12px 20px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.student-form button:hover {
-  background: #1e5d96;
-  transform: scale(1.05);
-}
-
-
-/* Dashboard Cards */
+/* =======================
+   DASHBOARD CARDS
+======================= */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 25px;
   margin-top: 30px;
 }
-
 .card {
   background: rgba(255, 255, 255, 0.1);
   padding: 40px 20px;
@@ -233,19 +263,100 @@ button:hover {
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
   transition: 0.3s;
 }
-
 .card:hover {
   background: #0A2647;
   color: #fff;
   transform: scale(1.08);
   box-shadow: 0 0 20px rgba(255,255,255,0.3);
 }
-
 .card.logout {
   background: rgba(255, 0, 0, 0.3);
 }
-
 .card.logout:hover {
   background: rgba(255, 0, 0, 0.6);
   color: #fff;
+}
+
+/* =======================
+   EXTRA: FRIEND'S STYLES
+   (Students Table + Buttons)
+======================= */
+.page-wrap {
+  max-width: 1000px;
+  margin: 15px auto;
+  padding: 0 20px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+.site-title {
+  background: #0b3b66;
+  color: #fff;
+  text-align: center;
+  padding: 18px 0;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  border-radius: 8px;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.15) inset;
+}
+.card-title {
+  color: #ffd24d;
+  font-size: 25px;
+  text-align: center;
+  margin: -8px 0 18px 0;
+  font-weight: 800;
+  text-shadow: 0 2px 0 rgba(0,0,0,0.2);
+}
+.table-wrap {
+  display:flex;
+  justify-content:center;
+}
+.students-table {
+  width: 78%;
+  border-collapse: separate;
+  border-spacing: 2;
+  border-radius: 8px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  background: linear-gradient(180deg,#10293d 0%, #123b5b 100%);
+  color: #fff;
+}
+.students-table thead th {
+  background: linear-gradient(90deg,#266892, #24404e);
+  padding: 12px 18px;
+  font-weight:700;
+  font-size:16px;
+  text-align:center;
+  color:#f3e521fb;
+}
+.students-table td {
+  padding: 8px 58px;
+  font-size: 20px;
+  color: #e7f0ff;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+.students-table td:nth-child(2) {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+}
+.action-btn {
+  display:inline-block;
+  padding:10px 80px;
+  margin:0 10px;
+  font-size:18px;
+  border-radius:12px;
+  cursor:pointer;
+  box-shadow: 0 9px 9px rgba(0,0,0,0.18);
+  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+  min-width: 100px;
+  min-height: 20px;
+}
+.action-btn.edit { background:#63a0c9; color:#fff; }
+.action-btn.edit:hover { background:#5588a9; }
+.action-btn.delete { background:#235248; color:#fff; }
+.action-btn.delete:hover { background:#c0cca0; }
+@media (max-width:780px){
+  .students-table{ width:95%;}
+  .students-table td{ padding:14px 10px;}
+  .card{ padding:18px; border-radius:10px;}
+  .card-title{ font-size:20px;}
 }

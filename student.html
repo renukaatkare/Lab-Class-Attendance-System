@@ -2,55 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Students - Attendance System</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- Header -->
+  <div class="header">
+    EDUGATE ATTENDANCE SYSTEM
+  </div>
+
+  <!-- College Name -->
+  <h1 class="college-name">Bharatiya Jain Sanghatana's College</h1>
+
+  <!-- Navbar -->
   <nav class="navbar">
     <ul>
-      <li><a class="nav-link active" href="index.html">Home</a></li>
+      <li><a class="nav-link" href="index.html">Home</a></li>
       <li><a class="nav-link active" href="student.html">Students</a></li>
-      <li><a class="nav-link active" href="attendance.html">Attendance</a></li>
-      <li><a class="nav-link active" href="report.html">Reports</a></li>
-      <li><a class="nav-link active" href="dashboard.html">Dashboard</a></li>
+      <li><a class="nav-link" href="attendance.html">Attendance</a></li>
+      <li><a class="nav-link" href="report.html">Reports</a></li>
+      <li><a class="nav-link" href="dashboard.html">Dashboard</a></li>
     </ul>
   </nav>
 
-  <div class="container">
-    <h2>🎓 Student Management</h2>
+  <!-- Student Content -->
+  <div class="page-wrap">
 
-    <!-- Student Form -->
-    <form class="student-form">
-      <input type="text" placeholder="Student Name" required />
-      <input type="text" placeholder="Roll Number" required />
-      <input type="text" placeholder="Class / Lab" required />
-      <button type="submit">Add Student</button>
-    </form>
 
-    <!-- Student Table -->
-    <h3>📋 Student List</h3>
-    <table>
-      <tr>
-        <th>Roll No</th>
-        <th>Name</th>
-        <th>Class</th>
-      </tr>
-      <tr>
-        <td>101</td>
-        <td>Vaishnavi Deshmane</td>
-        <td>TYBSc CS</td>
-      </tr>
-      <tr>
-        <td>102</td>
-        <td>Rohit Patil</td>
-        <td>SYBSc CS</td>
-      </tr>
-      <tr>
-        <td>103</td>
-        <td>Amit Jadhav</td>
-        <td>FYBSc CS</td>
-      </tr>
-    </table>
+    <div class="card">
+      <h2 class="card-title">👨‍🎓 Manage Students</h2>
+
+      <div class="table-wrap">
+        <table class="students-table">
+          <thead>
+            <tr>
+              <th>Roll No</th>
+              <th>Name</th>
+              <th>Class</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Vaishnavi Deshmane</td>
+              <td>BBA(CA)</td>
+              <td class="center">
+                <button class="action-btn edit">Edit</button>
+                <button class="action-btn delete">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Renuka Atkare</td>
+              <td>BBA(CA)</td>
+              <td class="center">
+                <button class="action-btn edit">Edit</button>
+                <button class="action-btn delete">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
+
 </body>
 </html>
