@@ -51,7 +51,7 @@ body {
 }
 .navbar a:hover {
   background-color: #5ec4c4;
-  color: #ffcc00;
+  color: #f8ad35;
   font-size: 19px;
 }
 
@@ -77,8 +77,7 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 40px 70px; /* तुमच्या फाइलमधलं */
-}
+  padding: 40px 70px; }
 .left img {
   width: 550px;
   height: auto;
@@ -134,12 +133,12 @@ body {
 .modal {
   display: none;
   position: fixed;
-  z-index: 1000; /* तुमच्या फाइलमधलं */
+  z-index: 1000; 
   left: 0; 
   top: 0;
   width: 100%; 
   height: 100%;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(9, 64, 82, 0.5);
 }
 .modal-content {
   background-color: #fff;
@@ -149,7 +148,7 @@ body {
   width: 400px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  position: relative; /* तुमच्या फाइलमधलं */
+  position: relative; 
 }
 .close {
   color: red;
@@ -206,7 +205,7 @@ body {
 }
 
 /* =======================
-   TABLE STYLING (तुझं)
+   TABLE STYLING 
 ======================= */
 .table-container {
   display: flex;
@@ -217,10 +216,10 @@ table {
   width: 90%;
   border-collapse: collapse;
   background: #34495e;
-  color: white;
+  color: rgb(255, 255, 255);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  box-shadow: 0 0 15px rgba(8, 28, 87, 0.4);
 }
 th, td {
   padding: 12px;
@@ -228,18 +227,19 @@ th, td {
   font-size: 16px;
 }
 th {
-  background: #001f4d;
+  background: #081220;
   color: #ffcc00;
 }
-tr:nth-child(even) { background: #2f4a80; }
-tr:nth-child(odd)  { background: #3b5ca7; }
+tr:nth-child(even) { background: #5071bd; }
+tr:nth-child(odd)  { background: #5c81d8; }
 tr:hover td {
-  background: #4a6fc2;
+  background: #41527a;
   transition: 0.3s;
 }
 button {
   display: block;
   margin: 20px auto 0;
+
 }
 
 /* =======================
@@ -288,8 +288,8 @@ button {
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
 }
 .site-title {
-  background: #0b3b66;
-  color: #fff;
+  background: #113d64;
+  color: #f5f4f4;
   text-align: center;
   padding: 18px 0;
   font-weight: 700;
@@ -315,11 +315,11 @@ button {
   border-spacing: 2;
   border-radius: 8px;
   box-shadow: 0 8px 18px rgba(0,0,0,0.25);
-  background: linear-gradient(180deg,#10293d 0%, #123b5b 100%);
+  background: linear-gradient(180deg,#040c12 0%, #123b5b 100%);
   color: #fff;
 }
 .students-table thead th {
-  background: linear-gradient(90deg,#266892, #24404e);
+  background: linear-gradient(90deg,#486170, #24404e);
   padding: 12px 18px;
   font-weight:700;
   font-size:16px;
@@ -350,13 +350,174 @@ button {
   min-width: 100px;
   min-height: 20px;
 }
-.action-btn.edit { background:#63a0c9; color:#fff; }
+.action-btn.edit { background:#144d52; color:#fff; }
 .action-btn.edit:hover { background:#5588a9; }
-.action-btn.delete { background:#235248; color:#fff; }
+.action-btn.delete { background:#35796a; color:#fff; }
 .action-btn.delete:hover { background:#c0cca0; }
 @media (max-width:780px){
   .students-table{ width:95%;}
   .students-table td{ padding:14px 10px;}
   .card{ padding:18px; border-radius:10px;}
   .card-title{ font-size:20px;}
+}
+
+
+
+/* Attendance Page - Save Button */
+.save-btn {
+  padding: 14px 32px;   /* size extend*/
+  font-size: 18px;      /* text big */
+  font-weight: bold;    /* Bold text */
+  border-radius: 8px;
+  background: #c7cb78;
+  color: #0a2e63;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.save-btn:hover {
+  background: #de8e50;
+  color: white;
+}
+
+
+
+/* /////   Center Align Report Table ///// */
+.container table {
+  margin: 0 auto;       /* Center horizontally */
+  width: 85%;           /* Optional: adjust table width */
+  border-radius: 10px;  /* Rounded corners */
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);  /* Optional shadow */
+  transition: transform 0.25s ease, box-shadow 0.25s ease; /* Hover effect */
+}
+
+/* Hover Zoom + Shadow Effect */
+.container table:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 22px rgba(0,0,0,0.4);
+}
+
+
+////// Dashboard Cards /////////
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.card {
+  background: linear-gradient(145deg, #0a2e63, #113d64);
+  padding: 40px 20px;
+  border-radius: 16px;
+  text-align: center;
+  font-size: 20px;
+  color: #1d1d1b;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(8, 7, 7, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.08);
+  background: linear-gradient(145deg, #5ec4c4, #0a2647);
+  box-shadow: 0 12px 28px rgba(8, 8, 8, 0.6);
+  color: #fff;
+}
+
+.card.logout {
+  background: linear-gradient(145deg, #b66868, #a44545);
+}
+
+.card.logout:hover {
+  background: linear-gradient(145deg, #e24949, #763e3e);
+  color: #fff;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(to right, #0a2e63, #113d64);
+  color: #faae3b;
+  padding: 20px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  box-shadow: 0 5px 15px rgba(43, 25, 25, 0.3);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* College Name */
+.college-name {
+  text-align: center;
+  font-size: 20px;
+  margin: 15px 0;
+  font-weight: 700;
+  color: #0a2e63;
+}
+
+/* Container */
+.container {
+  background: rgba(10, 38, 71, 0.85);
+  padding: 40px;
+  margin: 30px auto;
+  border-radius: 16px;
+  max-width: 1000px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+  color: white;
+  text-align: center;
+}
+
+.container h2 {
+  font-size: 28px;
+  color: #e1ab0b;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  padding: 15px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.navbar li {
+  margin: 0 20px;
+}
+.navbar a {
+  background-color: #0A2647;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  transition: 0.3s;
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.2);
+}
+.navbar a:hover {
+  background-color: #5ec4c4;
+  color: #28033b;
+  font-size: 19px;
+}
+.navbar a.active {
+  background-color: #f3d44a;
+  color: #0a2e63;
+  font-weight: 700;
 }
