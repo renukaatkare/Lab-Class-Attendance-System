@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EDUGATE  bjs ATTENDANCE SYSTEM</title>
+  <title>EDUGATE ATTENDANCE SYSTEM</title>
   <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
@@ -22,9 +22,9 @@
       <h2>Login</h2>
 
       <form action="dashboard.html" method="get">
-        <input type="text" placeholder="Enter Username" required>
-        <input type="password" placeholder="Enter Password" required>
-        <button type="submit">Login</button>
+  <input type="text" id="username" placeholder="Enter Username" required>
+  <input type="password" id="password" placeholder="Enter Password" required>
+  <button type="submit">Login</button>
       </form>
 
       <div class="links">
@@ -47,16 +47,81 @@
     <div class="modal-content">
       <span class="close" id="closeRegister">&times;</span>
       <h2>New Registration</h2>
-      <input type="text" placeholder="Full Name">
-      <input type="email" placeholder="Enter Email">
-      <input type="text" placeholder="Username">
-      <input type="password" placeholder="Password">
-      <input type="password" placeholder="Confirm Password">
-      <button>Register</button>
+      <form id="registerForm">
+        <input type="text" id="regName" placeholder="Full Name" required>
+        <input type="email" id="regEmail" placeholder="Enter Email" required>
+        <input type="text" id="regUsername" placeholder="Username" required>
+        <input type="password" id="regPassword" placeholder="Password" required>
+        <input type="password" id="regConfirm" placeholder="Confirm Password" required>
+        <button type="submit">Register</button>
+      </form>
     </div>
   </div>
 
   <script>
+    // Login Form Connection to Backend
+    document.querySelector("form").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const loginBtn = this.querySelector("button[type='submit']");
+      loginBtn.disabled = true;
+      loginBtn.textContent = "Logging in...";
+      try {
+        const res = await fetch("http://localhost:8000/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert("Login successful!");
+          window.location.href = "dashboard.html";
+        } else {
+          alert(data.message || "Invalid credentials");
+        }
+      } catch (err) {
+        alert("Server error. Please try again later.");
+      }
+      loginBtn.disabled = false;
+      loginBtn.textContent = "Login";
+    });
+
+    // Registration Form Connection to Backend
+    document.getElementById("registerForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const name = document.getElementById("regName").value;
+      const email = document.getElementById("regEmail").value;
+      const username = document.getElementById("regUsername").value;
+      const password = document.getElementById("regPassword").value;
+      const confirm = document.getElementById("regConfirm").value;
+      if (password !== confirm) {
+        alert("Passwords do not match.");
+        return;
+      }
+      const regBtn = this.querySelector("button[type='submit']");
+      regBtn.disabled = true;
+      regBtn.textContent = "Registering...";
+      try {
+        const res = await fetch("http://localhost:8000/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, username, password })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert("Registration successful! You can now login.");
+          document.getElementById("registerModal").style.display = "none";
+        } else {
+          alert(data.message || "Registration failed");
+        }
+      } catch (err) {
+        alert("Server error. Please try again later.");
+      }
+      regBtn.disabled = false;
+      regBtn.textContent = "Register";
+    });
+
     // Forgot Password Modal
     const forgotLink = document.getElementById("forgot-link");
     const forgotModal = document.getElementById("forgotModal");
